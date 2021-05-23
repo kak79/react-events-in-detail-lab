@@ -3,8 +3,8 @@ import React from 'react'
 
 class DelayedButton extends React.Component {
 
-  onClickHandler = (e) => {
-    const target = e.target
+  onClickHandler = e => {
+    e.persist();
     window.setTimeout(() => {
       this.props.onDelayedClick(e)
     },  this.props.delay);
